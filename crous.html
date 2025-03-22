@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image Carousel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .carousel {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .active {
+            opacity: 1;
+        }
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .arrow-left {
+            left: 20px;
+        }
+        .arrow-right {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="slide active" style="background-image: url('/AAAABaM2HJhp57FNCb_x9CbHrMUUTkDtz7Bw66308aKPZkWx4O3JAM7s8s1bvNpiFPq6b1yRP0E_0u_8N3x3bzJiwVTVOWbdRTq0.webp');"></div>
+        <div class="slide" style="background-image: url('/netflix_logo-removebg-preview.png');"></div>
+        <div class="slide" style="background-image: url('/AAAABaM2HJhp57FNCb_x9CbHrMUUTkDtz7Bw66308aKPZkWx4O3JAM7s8s1bvNpiFPq6b1yRP0E_0u_8N3x3bzJiwVTVOWbdRTq0.webp');"></div>
+        <div class="text-overlay" id="text">Welcome to the Carousel</div>
+        <button class="arrow arrow-left" onclick="prevSlide()">&#10094;</button>
+        <button class="arrow arrow-right" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const textOverlay = document.getElementById('text');
+        const texts = [
+            "Welcome to the Carousel",
+            "Explore the City Lights",
+            "Innovation and Technology"
+        ];
+        let currentIndex = 0;
+
+        function updateSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+            textOverlay.textContent = texts[index];
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlide(currentIndex);
+        }
+    </script>
+</body>
+</html>

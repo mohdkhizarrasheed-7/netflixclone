@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero__bg__image__container">
+          <img
+            src="https://assets.nflxext.com/ffe/siteui/vlv3/9c5457b8-9ab0-4a04-9fc1-e608d5670f1a/710d74e0-7158-408e-8d9b-23c219dee5df/IN-en-20210719-popsignuptwoweeks-perspective_alpha_website_small.jpg"
+            alt="BG hero image"
+            class="hero__bg__image"
+          />
+        </div>
+        <div class="hero__bg__overlay"></div>
+
+        <div class="hero__card">
+          <h1 class="hero__title">
+            Unlimited Movies TV,<br />
+            Shows and More.
+          </h1>
+          <p class="hero__subtitle">Watch anywhere and cancel anytime.</p>
+          <p class="hero__description">
+            Ready to watch? Enter your email to create or restart your
+            membership .
+          </p>
+
+          <div class="email__form__container">
+            <div class="form__container">
+              <input type="email" class="email__input" placeholder=" " />
+              <label class="email__label">Email Address</label>
+            </div>
+            <button class="primary__button">
+              Get Started <i class="fal fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero__bg__image__container {
+    width: 100%;
+    height: 80vh;
+  }
+  
+  .hero__bg__image {
+    padding: 90px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15%;
+  }
+  
+  .hero__bg__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 80vh;
+    background: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+  
+  .hero__card {
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .hero__title {
+    font-weight: 600;
+    font-size: 2rem;
+  }
+  
+  .hero__subtitle,
+  .hero__description {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  
+  .hero__description {
+    margin: 0 50px;
+  }
+  
+  .email__input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    padding-left: 7px;
+  }
+  .email__label {
+    color: black;
+    position: absolute;
+    top: 28%;
+    left: 2%;
+    color: rgb(153, 149, 149);
+    transition: 0.5s;
+  }
+  
+  .email__form__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .form__container {
+    background-color: white;
+    width: 90%;
+    height: 50px;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .email__input:focus + .email__label {
+    top: 0.2rem;
+    font-size: 10px;
+  }
+  
+  .email__input:not(:placeholder-shown).email__input:not(:focus) + .email__label {
+    top: 0.2rem;
+    font-size: 10px;
+  }
+  
+  .email__input:focus-visible {
+    outline: none;
+  }
+  
+  .primary__button {
+    background-color: #dc030f;
+    border: 1px solid #dc030f;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .primary__button:hover{
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+  }
+  
